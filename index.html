@@ -164,10 +164,17 @@
         }
 
         /* Tabela Financeira */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-top: 20px;
+        }
+
         .budget-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            min-width: 480px;
         }
 
         .budget-table th {
@@ -311,6 +318,15 @@
             font-size: 0.85rem;
             border-top: 1px solid var(--border-color);
         }
+
+        /* Responsivo para Celular */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.3rem; }
+            .container { padding: 0 12px; margin: 20px auto; }
+            .card { padding: 22px 16px; }
+            .media-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .btn-primary { display: block; width: 100%; padding: 18px 20px; }
+        }
     </style>
 </head>
 <body>
@@ -402,54 +418,56 @@
             </div>
             <p>Para simplificar a aprovação do departamento financeiro e de produção da agência, apresentamos o balanço discriminado dos custos logísticos operacionais e honorários do artista:</p>
 
-            <table class="budget-table">
-                <thead>
-                    <tr>
-                        <th>Item / Discriminação</th>
-                        <th>Detalhamento</th>
-                        <th style="text-align: right;">Valor (R$)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Honorários do Artista (Cachê)</strong></td>
-                        <td>Performance de 5 horas de discotecagem contínua.</td>
-                        <td style="text-align: right;">R$ 300,00</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Diária de Alimentação</strong></td>
-                        <td>Ajuda de custo para período de viagem (24 e 25).</td>
-                        <td style="text-align: right;">R$ 150,00</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Transporte Intermunicipal</strong></td>
-                        <td>Passagens de ônibus ida/volta 
-                            <!-- ⬇️ ALTERE O LINK DA CLICKBUS ABAIXO ⬇️ -->
-                            <a href="https://www.clickbus.com.br/checkout" target="_blank" class="link-proof">[ClickBus]</a>
-                        </td>
-                        <td style="text-align: right;">R$ 124,78</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Hospedagem (Guarujá)</strong></td>
-                        <td>1 diária sem alimentação 
-                            <!-- ⬇️ ALTERE O LINK DA HOSPEDAGEM ABAIXO ⬇️ -->
-                            <a href="https://www.booking.com/hotel/br/suite-10-praia-das-pitangueiras.pt-br.html?aid=360920&label=New_Portuguese_PT_ROW_14224742526-u1LjyAmAJDW8Qz5NVRWT9QS821639566733%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=bf8fd7f01c9c196a4422adcb742946f1&all_sr_blocks=1388527101_410911895_1_0_0&checkin=2026-11-24&checkout=2026-11-25&dest_id=-645946&dest_type=city&dist=0&group_adults=1&group_children=0&hapos=18&highlighted_blocks=1388527101_410911895_1_0_0&hpos=18&matching_block_id=1388527101_410911895_1_0_0&no_rooms=1&req_adults=1&req_children=0&room1=A&sb_price_type=total&sr_order=distance_from_search&sr_pri_blocks=1388527101_410911895_1_0_0__11100&srepoch=1792499429&srpvid=f40557e2a2f6008c&type=total&ucfs=1&" target="_blank" class="link-proof">[Suíte 10 - Hospedagem Guarujá]</a>
-                        </td>
-                        <td style="text-align: right;">R$ 111,00</td>
-                    </tr>
-                    <tr class="total-row">
-                        <td colspan="2"><strong>Investimento Total Fechado</strong></td>
-                        <td style="text-align: right;" class="total-price">R$ 685,78</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="budget-table">
+                    <thead>
+                        <tr>
+                            <th>Item / Discriminação</th>
+                            <th>Detalhamento</th>
+                            <th style="text-align: right;">Valor (R$)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Honorários do Artista (Cachê)</strong></td>
+                            <td>Performance de 5 horas de discotecagem contínua.</td>
+                            <td style="text-align: right;">R$ 300,00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Diária de Alimentação</strong></td>
+                            <td>Ajuda de custo para período de viagem (24 e 25).</td>
+                            <td style="text-align: right;">R$ 150,00</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Transporte Intermunicipal</strong></td>
+                            <td>Passagens de ônibus ida/volta 
+                                <!-- ⬇️ ALTERE O LINK DA CLICKBUS ABAIXO ⬇️ -->
+                                <a href="https://www.clickbus.com.br/checkout" target="_blank" class="link-proof">[ClickBus]</a>
+                            </td>
+                            <td style="text-align: right;">R$ 124,78</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hospedagem (Guarujá)</strong></td>
+                            <td>1 diária sem alimentação 
+                                <!-- ⬇️ ALTERE O LINK DA HOSPEDAGEM ABAIXO ⬇️ -->
+                                <a href="https://www.booking.com/hotel/br/suite-10-praia-das-pitangueiras.pt-br.html?aid=360920&label=New_Portuguese_PT_ROW_14224742526-u1LjyAmAJDW8Qz5NVRWT9QS821639566733%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=bf8fd7f01c9c196a4422adcb742946f1&all_sr_blocks=1388527101_410911895_1_0_0&checkin=2026-11-24&checkout=2026-11-25&dest_id=-645946&dest_type=city&dist=0&group_adults=1&group_children=0&hapos=18&highlighted_blocks=1388527101_410911895_1_0_0&hpos=18&matching_block_id=1388527101_410911895_1_0_0&no_rooms=1&req_adults=1&req_children=0&room1=A&sb_price_type=total&sr_order=distance_from_search&sr_pri_blocks=1388527101_410911895_1_0_0__11100&srepoch=1792499429&srpvid=f40557e2a2f6008c&type=total&ucfs=1&" target="_blank" class="link-proof">[Suíte 10 - Hospedagem Guarujá]</a>
+                            </td>
+                            <td style="text-align: right;">R$ 111,00</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td colspan="2"><strong>Investimento Total Fechado</strong></td>
+                            <td style="text-align: right;" class="total-price">R$ 685,78</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
         <!-- CHAMADA PARA AÇÃO -->
         <div class="cta-section">
             <p style="margin-bottom: 24px; font-size: 1.1rem; color: var(--text-muted);">Para confirmação de data em agenda e alinhamento do rider técnico:</p>
-            <!-- ⬇️ ALTERE O LINK DO SEU WHATSAPP ABAIXO (SUBSTITUA COLE_SEU_NUMERO_AQUI PELO SEU NUMERO COM DDD) ⬇️ -->
-            <a href="https://wa.me/emrsmendes?s=t" target="_blank" class="btn-primary">Confirmar Evento via WhatsApp</a>
+            <!-- ⬇️ ALTERE O LINK DO SEU WHATSAPP ABAIXO ⬇️ -->
+            <a href="https://wa.me/5511999999999" target="_blank" class="btn-primary">Confirmar Evento via WhatsApp</a>
         </div>
 
     </div>

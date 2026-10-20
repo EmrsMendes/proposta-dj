@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta Artística | Discotecagem Guarujá</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #08080a;
+            --card-bg: rgba(18, 18, 22, 0.75);
+            --accent-gold: #d4af37;
+            --accent-cyan: #00f0ff;
+            --text-main: #f0f0f5;
+            --text-muted: #9a9ab0;
+            --border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(0, 240, 255, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        header {
+            padding: 80px 20px 60px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            background: linear-gradient(180deg, rgba(15,15,20,0.8) 0%, rgba(8,8,10,1) 100%);
+        }
+
+        .artist-tag {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            color: var(--accent-cyan);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #ffffff 30%, #a0a0b0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 620px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .cultural-badge {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 6px 16px;
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 50px auto;
+            padding: 0 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .card-subtitle-tag {
+            font-size: 0.8rem;
+            color: var(--accent-cyan);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        p {
+            color: #c0c0d0;
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+            font-weight: 300;
+        }
+
+        /* Grid da Galeria */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 28px;
+        }
+
+        .media-container {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #111115;
+            aspect-ratio: 4 / 5;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .media-container:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-cyan);
+        }
+
+        .media-container img,
+        .media-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Tabela Financeira */
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .budget-table th {
+            text-align: left;
+            padding: 16px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .budget-table td {
+            padding: 18px 16px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        .budget-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .link-proof {
+            display: inline-block;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+            transition: border-color 0.2s, color 0.2s;
+            margin-left: 6px;
+        }
+
+        .link-proof:hover {
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        .total-row td {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .total-price {
+            color: var(--accent-gold) !important;
+            font-size: 1.4rem;
+        }
+
+        /* Grid de Redes Sociais */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-3px);
+        }
+
+        .social-info h3 {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .social-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .btn-social {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            border-radius: 25px;
+            background: transparent;
+            color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        }
+
+        .btn-social:hover {
+            background: var(--accent-cyan);
+            color: #000000;
+        }
+
+        /* Seção CTA */
+        .cta-section {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-cyan) 0%, #0088ff 100%);
+            color: #000000;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 20px 48px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(0, 240, 255, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="artist-tag">Proposta de Apresentação</div>
+        <h1>DJ BIG</h1>
+        <p class="subtitle">Proposta de discotecagem para o evento dia 24/25 de Novembro no Guarujá/SP.</p>
+        <div class="cultural-badge">Brega, Brasilidades & Bagaceira</div>
+    </header>
+
+    <div class="container">
+        
+        <!-- SEÇÃO: CONCEITO ARTÍSTICO & REPERTOIRE -->
+        <section class="card">
+            <div class="card-header">
+                <h2 class="card-title">Direção Musical & Formato</h2>
+                <span class="card-subtitle-tag">5 Horas de Performance</span>
+            </div>
+            <p>Pernambucano, DJ e pesquisador de música. O trabalho na pista vem da cultura, da matriz brasileira e de uma leitura atenta da pista.</p>
+            <p>Para a noite no Guarujá, a proposta é um set fluido de 5 horas contínuas, construindo a energia do ambiente sem deixar o ritmo cair. Levo meu setup completo de mixagem, a casa fica responsável apenas pela estrutura de som.</p>
+
+            <div class="media-grid">
+                <!-- Fotos -->
+                <div class="media-container">
+                    <img src="foto1.jpeg" alt="Performance ao vivo">
+                </div>
+                <div class="media-container">
+                    <img src="foto2.jpeg" alt="Setup e discotecagem">
+                </div>
+                <div class="media-container">
+                    <img src="foto3.jpeg" alt="Atuação em evento">
+                </div>
+                <!-- Vídeos -->
+                <div class="media-container">
+                    <video controls muted loop preload="metadata">
+                        <source src="video1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="media-container">
+                    <video controls muted loop preload="metadata">
+                        <source src="video.2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="media-container">
+                    <video controls muted loop preload="metadata">
+                        <source src="video3.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO NOVAS: REDES SOCIAIS & INSTAGRAM -->
+        <section class="card">
+            <div class="card-header">
+                <h2 class="card-title">Portfólio & Redes Sociais</h2>
+                <span class="card-subtitle-tag">Instagram & Projetos</span>
+            </div>
+            <p>Acompanhe os registros de apresentações anteriores, festas autorais e bastidores de pista através das redes oficiais:</p>
+
+            <div class="social-grid">
+                <!-- Card Brega Night -->
+                <div class="social-card">
+                    <div class="social-info">
+                        <h3>Brega Night</h3>
+                        <p>Projeto autoral e festa focada em brega e ritmos latinos.</p>
+                    </div>
+                    <!-- ⬇️ ALTERE O LINK DO INSTAGRAM DO BREGA NIGHT ABAIXO ⬇️ -->
+                    <a href="https://www.instagram.com/obreganight/" target="_blank" class="btn-social">@obreganight no Instagram</a>
+                </div>
+
+                <!-- Card Perfil Pessoal -->
+                <div class="social-card">
+                    <div class="social-info">
+                        <h3>Perfil Artístico</h3>
+                        <p>Perfil pessoal.</p>
+                    </div>
+                    <!-- ⬇️ ALTERE O LINK DO SEU INSTAGRAM PESSOAL ABAIXO ⬇️ -->
+                    <a href="https://www.instagram.com/emersonmesmo/" target="_blank" class="btn-social">@emersonmesmo no Instagram</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: LOGÍSTICA E INVESTIMENTO -->
+        <section class="card">
+            <div class="card-header">
+                <h2 class="card-title">Detalhamento Logístico & Custos</h2>
+                <span class="card-subtitle-tag">Orçamento Transparente</span>
+            </div>
+            <p>Para simplificar a aprovação do departamento financeiro e de produção da agência, apresentamos o balanço discriminado dos custos logísticos operacionais e honorários do artista:</p>
+
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Item / Discriminação</th>
+                        <th>Detalhamento</th>
+                        <th style="text-align: right;">Valor (R$)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Honorários do Artista (Cachê)</strong></td>
+                        <td>Performance de 5 horas de discotecagem contínua.</td>
+                        <td style="text-align: right;">R$ 300,00</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Diária de Alimentação</strong></td>
+                        <td>Ajuda de custo para período de viagem (24 e 25).</td>
+                        <td style="text-align: right;">R$ 150,00</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Transporte Intermunicipal</strong></td>
+                        <td>Passagens de ônibus ida/volta 
+                            <!-- ⬇️ ALTERE O LINK DA CLICKBUS ABAIXO ⬇️ -->
+                            <a href="https://www.clickbus.com.br/checkout" target="_blank" class="link-proof">[ClickBus]</a>
+                        </td>
+                        <td style="text-align: right;">R$ 124,78</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hospedagem (Guarujá)</strong></td>
+                        <td>1 diária sem alimentação 
+                            <!-- ⬇️ ALTERE O LINK DA HOSPEDAGEM ABAIXO ⬇️ -->
+                            <a href="https://www.booking.com/hotel/br/suite-10-praia-das-pitangueiras.pt-br.html?aid=360920&label=New_Portuguese_PT_ROW_14224742526-u1LjyAmAJDW8Qz5NVRWT9QS821639566733%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg&sid=bf8fd7f01c9c196a4422adcb742946f1&all_sr_blocks=1388527101_410911895_1_0_0&checkin=2026-11-24&checkout=2026-11-25&dest_id=-645946&dest_type=city&dist=0&group_adults=1&group_children=0&hapos=18&highlighted_blocks=1388527101_410911895_1_0_0&hpos=18&matching_block_id=1388527101_410911895_1_0_0&no_rooms=1&req_adults=1&req_children=0&room1=A&sb_price_type=total&sr_order=distance_from_search&sr_pri_blocks=1388527101_410911895_1_0_0__11100&srepoch=1792499429&srpvid=f40557e2a2f6008c&type=total&ucfs=1&" target="_blank" class="link-proof">[Suíte 10 - Hospedagem Guarujá]</a>
+                        </td>
+                        <td style="text-align: right;">R$ 111,00</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="2"><strong>Investimento Total Fechado</strong></td>
+                        <td style="text-align: right;" class="total-price">R$ 685,78</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- CHAMADA PARA AÇÃO -->
+        <div class="cta-section">
+            <p style="margin-bottom: 24px; font-size: 1.1rem; color: var(--text-muted);">Para confirmação de data em agenda e alinhamento do rider técnico:</p>
+            <!-- ⬇️ ALTERE O LINK DO SEU WHATSAPP ABAIXO (SUBSTITUA COLE_SEU_NUMERO_AQUI PELO SEU NUMERO COM DDD) ⬇️ -->
+            <a href="https://wa.me/emrsmendes?s=t" target="_blank" class="btn-primary">Confirmar Evento via WhatsApp</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Proposta Comercial e Artística de Discotecagem. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
